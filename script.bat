@@ -1,11 +1,13 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM Loop for July, August, September 2025
-for %%m in (07 08 09) do (
+REM Loop for April, May, June 2025
+for %%m in (04 05 06) do (
 
     REM Days per month
-    if %%m==09 (
+    if %%m==04 (
+        set max=30
+    ) else if %%m==06 (
         set max=30
     ) else (
         set max=31
