@@ -1,14 +1,12 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM Loop for Jan, Feb, March
-for %%m in (01 02 03) do (
+REM Loop for Oct, Nov, Dec 2025
+for %%m in (10 11 12) do (
 
     REM Days per month
-    if %%m==02 (
-        set max=28
-    ) else if %%m==01 (
-        set max=31
+    if %%m==11 (
+        set max=30
     ) else (
         set max=31
     )
@@ -35,8 +33,8 @@ for %%m in (01 02 03) do (
                 set day=%%d
                 if %%d LSS 10 set day=0%%d
 
-                set GIT_AUTHOR_DATE=2026-%%m-!day!T12:%%i:00
-                set GIT_COMMITTER_DATE=2026-%%m-!day!T12:%%i:00
+                set GIT_AUTHOR_DATE=2025-%%m-!day!T12:%%i:00
+                set GIT_COMMITTER_DATE=2025-%%m-!day!T12:%%i:00
 
                 git commit -m "Day %%m-!day! Commit %%i"
             )
